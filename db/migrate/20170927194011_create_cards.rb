@@ -18,6 +18,7 @@ class CreateCards < ActiveRecord::Migration[5.0]
       t.string :rarity
       t.string :subtypes
       t.string :types
+      t.belongs_to :magic_set
 
       t.timestamps
     end
