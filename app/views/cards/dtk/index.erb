@@ -1,0 +1,7 @@
+<h1>Dragons of Tarkir</h1>
+<h3> <a href="/cards/dtk/new">Add card to database</a></h3>
+<% @cards.each do |card| %>
+  <div class="card-li">
+    <a class="card-link" href="/cards/dtk/<%=card.id%>"><%= card.name %></a>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<div class="card-details">
+  <ul>
+    <li> Mana Cost: <%= @card.mana_cost %></li>
+    <li> Rarity: <%= @card.rarity %> </li>
+    <li> Card Type: <%= @card.cardtype %> </li>
+    <li> Description: <%= @card.text %> </li>
+    <li>Power: <%= @card.power %> Toughness: <%= @card.toughness %> </li>
+  </ul>
+  <a href="/cards/dtk/<%=@card.id%>/edit">Edit this card</a>
+  <%= erb :'/cards/dtk/_delete', layout: false, locals: { card: @card } %>
+</div>
