@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Welcome to Magic the Gathering card library</h1>
+  <p>This is a site in progress</p>
+
+  <% @magic_sets.each do |set| %>
+    <h2><a href="/magic_set/<%=set.id%>">set.name</a></h2>
+  <% end %>
+</div>
