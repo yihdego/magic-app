@@ -17,11 +17,11 @@ describe User do
   describe 'authentication' do
     it 'will return user if authentication passes' do
       user.save
-      expect(user.login('adamcole@email.com','Cole')).to eq(user)
+      expect(User.login('adamcole@email.com','Cole')).to eq(user)
     end
     it 'will return nil if authentication fails' do
       user.save
-      expect(user.login('adamcole@email.com','Baybay')).to eq(nil)
+      expect(User.login('adamcole@email.com','Baybay')).to eq(nil)
     end
   end
 end

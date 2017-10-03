@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
-  def login(email, input)
+  def self.login(email, input)
     @user = User.find_by_email(email)
       if @user && @user.password == input
         @user
