@@ -1,4 +1,6 @@
 <h1><%=@magic_set.name%></h1>
   <% @magic_set.cards.each do |card| %>
-<h2 class="card-name"> <%= card.name %></h2>
+  <div class="card-li">
+    <a class="card-link" href="/magic_sets/<%=card.magic_set.name%>/cards/<%=card.id%>"><%= card.name %></a>
+  </div>
   <% end %>
