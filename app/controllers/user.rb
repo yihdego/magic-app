@@ -3,6 +3,11 @@ get '/users/new' do
 end
 
 post '/users' do
-  User.create(params[:user])
-  redirect '/'
+  user = User.create(params[:user])
+  if user == nil
+    redirect '/'
+  else
+    @error = "Invalid username, email or password"
+    erb :'/users/new'
+  end
 end

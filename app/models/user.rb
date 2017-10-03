@@ -20,9 +20,11 @@ class User < ActiveRecord::Base
     @user.save!
   end
 
-  def login(email, password)
-    @user = User.find_by_email(email)
-    if @user.password == password
+  def self.login(email, input)
+    p '*' * 100
+    p email
+    @user = User.find_by(email: email)
+    if @user && @user.password == input
       @user
     else
       nil

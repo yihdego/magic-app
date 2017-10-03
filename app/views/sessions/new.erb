@@ -1,0 +1,25 @@
+<div class="user_input">
+  <form class="returning-user" action="/sessions" method="post">
+    <div class="input_label">
+      <label for="email">Email:</label>
+    </div>
+    <div class="input_field">
+      <input type="email" name="email">
+    </div>
+    <div class="input_label">
+      <label for="password">Password:</label>
+    </div>
+    <div class="input_field">
+      <input type="password" name="password">
+    </div>
+    <div class="input_field">
+      <input type="submit">
+    </div>
+  </form>
+</div>
+
+<div class="error">
+  <% if @error %>
+    <p> <%= @error %></p>
+  <% end %>
+</div>

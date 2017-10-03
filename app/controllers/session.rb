@@ -3,6 +3,12 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-
-  redirect '/'
+  user = User.login(params[:email], params[:password])
+  if user != nil
+    session[:user_id] = user.id
+    redirect '/'
+  else
+    @error = "Invalid email or password"
+    erb :'/sessions/new'
+  end
 end
