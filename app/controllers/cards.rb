@@ -14,7 +14,7 @@ end
 # end
 
 #show
-get '/cards/:id' do
+get '/magic_set/:name/cards/:id' do
   p params
   @card = Card.find_by(name: (params[:id].gsub("_"," ")))
   p @card
