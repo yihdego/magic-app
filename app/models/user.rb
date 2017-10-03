@@ -17,9 +17,9 @@ class User < ActiveRecord::Base
     @user.save!
   end
 
-  def login
-    @user = User.find_by_email(params[:email])
-    if @user.password == params[:password]
+  def login(email, password)
+    @user = User.find_by_email(email)
+    if @user.password == password
       @user
     else
       nil

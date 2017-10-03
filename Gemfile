@@ -21,3 +21,7 @@ group :development, :test do
   gem 'faker', '~> 1.7.3'
   gem 'rspec', '~> 3.5'
 end
+
+group :test do
+  gem 'database_cleaner'
+end
