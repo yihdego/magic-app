@@ -1,3 +1,3 @@
-class User < ApplicationRecord
-  # Remember to create a migration!
+class User < ActiveRecord::Base
+  has_many :decks
 end
