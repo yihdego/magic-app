@@ -1,3 +1,3 @@
 get '/users/new' do
-  # erb :'/user/new'
+  erb :'/users/new'
 end
