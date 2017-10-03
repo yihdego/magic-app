@@ -3,10 +3,16 @@ get '/users/new' do
 end
 
 post '/users' do
-  user = User.create(params[:user])
-  if user == nil
+  p "*" * 50
+  p params
+  p "*" * 50
+  user = User.new(params[:user])
+  user.password = params[:password]
+  if user.save
     redirect '/'
   else
+    p "not working"
+    p user.errors
     @error = "Invalid username, email or password"
     erb :'/users/new'
   end

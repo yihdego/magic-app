@@ -14,21 +14,13 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
-  def create
-    @user = User.new(params[:user])
-    @user.password = params[:password]
-    @user.save!
-  end
-
-  def self.login(email, input)
-    p '*' * 100
-    p email
-    @user = User.find_by(email: email)
-    if @user && @user.password == input
-      @user
-    else
-      nil
-    end
+  def login(email, input)
+    @user = User.find_by_email(email)
+      if @user && @user.password == input
+        @user
+      else
+        nil
+      end
   end
 
 end
