@@ -1,3 +1,3 @@
 get '/' do
-  redirect '/magic_set'
+  redirect '/magic_sets'
 end

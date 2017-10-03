@@ -1,9 +1,9 @@
-get '/magic_set' do
+get '/magic_sets' do
   @magic_sets = MagicSet.all
   erb :'/magic_sets/index'
 end
 
-get '/magic_set/:id' do
+get '/magic_sets/:id' do
   p params
   @magic_set = MagicSet.find(params[:id])
   p @magic_set
