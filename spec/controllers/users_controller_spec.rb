@@ -5,4 +5,9 @@ describe 'users controller' do
     get '/users/new'
     expect(last_response.status).to eq 200
   end
+
+  it 'returns a 200 status when creating an account' do
+    post '/users'
+    expect(last_response.status).to eq 302
+  end
 end
