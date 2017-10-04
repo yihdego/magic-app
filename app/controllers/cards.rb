@@ -22,9 +22,9 @@ get '/cards/:id' do
   else
     @card = Card.find_by(name: (params[:id].gsub("_"," ")))
   end
-  # if request.xhr?
-  #   erb :'/cards/_card-details', layout: false
-  # else
+  if request.xhr?
+    erb :'/cards/_card-details', layout: false
+  else
     erb :'/cards/show'
-  # end
+  end
 end
