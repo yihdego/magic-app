@@ -1,11 +1,15 @@
-<h1><a href='/magic_sets/<%=@card.magic_set.name%>'><%=@card.magic_set.name%></a></h1>
-<h2 class="card-name"> <%= @card.name %></h2>
-<div class="card-details">
-  <ul>
-    <li> Mana Cost: <%= @card.mana_cost %></li>
-    <li> Rarity: <%= @card.rarity %> </li>
-    <li> Card Type: <%= @card.cardtype %> </li>
-    <li> Description: <%= @card.text %> </li>
-    <li>Power: <%= @card.power %> Toughness: <%= @card.toughness %> </li>
-  </ul>
-</div>
+<% if @card %>
+  <h1><a href='/magic_sets/<%=@card.magic_set.name%>'><%=@card.magic_set.name%></a></h1>
+  <h2 class="card-name"> <%= @card.name %></h2>
+  <div class="card-details">
+    <ul>
+      <li> Mana Cost: <%= @card.mana_cost %></li>
+      <li> Rarity: <%= @card.rarity %> </li>
+      <li> Card Type: <%= @card.cardtype %> </li>
+      <li> Description: <%= @card.text %> </li>
+      <li>Power: <%= @card.power %> Toughness: <%= @card.toughness %> </li>
+    </ul>
+  </div>
+<% else %>
+
+<% end %>

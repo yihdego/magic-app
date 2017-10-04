@@ -16,8 +16,12 @@ end
 #show
 get '/cards/:id' do
   p params
-  @card = Card.find_by(name: (params[:id].gsub("_"," ")))
-  p @card
+  if params[:card_name]
+    card_name = params[:card_name].gsub("_"," ")
+    @card = Card.find_by(name: card_name)
+  else
+    @card = Card.find_by(name: (params[:id].gsub("_"," ")))
+  end
   # if request.xhr?
   #   erb :'/cards/_card-details', layout: false
   # else
