@@ -1,9 +1,16 @@
 get '/cards' do
+  p "this route is getting hit"
   if params[:card_name]
     p params
+    p params[:card_name]
     @cards = Card.where(name: params[:card_name])
+    p @cards
   end
+  if request.xhr?
+    erb :'/cards/_card-details', locals: { cards: @cards }, layout: false
+  else
     erb :'/cards/index'
+  end
 end
 
 # post '/cards/dtk' do
