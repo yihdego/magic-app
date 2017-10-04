@@ -1,7 +1,9 @@
-<div class="container">
+<div class="index">
   <h1>Welcome to Magic the Gathering card library</h1>
-  <p>This is a site in progress</p>
-  <p>Sets by symbol</p>
+  <div class="index-summary">
+    <p>This is a site in progress</p>
+    <p>Sets by symbol</p>
+  </div>
   <% @magic_sets.each do |set| %>
     <h2><a href="/magic_sets/<%=set.name%>"><%=set.name%></a></h2>
   <% end %>
