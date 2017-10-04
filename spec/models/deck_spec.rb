@@ -11,4 +11,17 @@ describe Deck do
       expect(deck.user).to eq user
     end
   end
+  describe 'decklist method' do
+    let(:bolt) { Card.create(name: "Lighting Bolt") }
+    let(:counterspell) { Card.create(name: "Counterspell") }
+    it 'can add cards to the decklist' do
+      deck.add_decklist(bolt, 4)
+      expect(deck.decklist.length).to eq(1)
+    end
+    it 'can return the quanityt of a card' do
+      deck.add_decklist(bolt, 4)
+      deck.add_decklist(counterspell, 3)
+      expect(deck.decklist.last).to eq({counterspell=>3})
+    end
+  end
 end

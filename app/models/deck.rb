@@ -1,5 +1,20 @@
 class Deck < ActiveRecord::Base
   belongs_to :user
-  has_many :decklists
-  has_many :cards, through: :decklists
+
+  def decklist
+    @decklist || @decklist = Array.new
+  end
+
+  def add_decklist(card, amount = 1)
+    entry = Entry.create(card, amount)
+    if !@decklist
+      @decklist = Array.new
+      @decklist << entry
+    else
+      @decklist << entry
+    end
+  end
+
+
+
 end
