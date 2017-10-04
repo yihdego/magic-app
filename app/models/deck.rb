@@ -8,13 +8,7 @@ class Deck < ActiveRecord::Base
   end
 
   def add_decklist(card, quantity = 1)
-    entry = Entry.create(card: card, quantity: quantity, deck: self)
-    if !@decklist
-      @decklist = Array.new
-      @decklist << entry
-    else
-      @decklist << entry
-    end
+    Entry.create(card: card, quantity: quantity, deck: self)
   end
 
 end

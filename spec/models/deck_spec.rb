@@ -16,12 +16,12 @@ describe Deck do
     let(:counterspell) { Card.create(name: "Counterspell") }
     it 'can add cards to the decklist' do
       deck.add_decklist(bolt, 4)
-      expect(deck.decklist.length).to eq(1)
+      expect(deck.entries.length).to eq(1)
     end
     it 'can return the quantity of a card' do
       deck.add_decklist(bolt, 4)
       deck.add_decklist(counterspell, 3)
-      expect(deck.decklist.last.quantity).to eq(3)
+      expect(deck.entries.last.quantity).to eq(3)
     end
   end
 end
