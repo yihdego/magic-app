@@ -1,5 +1,5 @@
 class Deck < ActiveRecord::Base
   belongs_to :user
-  has_many :cards_decks
-  has_many :cards, through: :decks_cards
+  has_many :decklists
+  has_many :cards, through: :decklists
 end
