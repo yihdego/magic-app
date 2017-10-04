@@ -1,6 +1,7 @@
 <div class="container">
-  <h1>Welcome to Magic the Gathering card library</h1>
-  <p>This is a site in progress</p>
-
-  <h2><a href="/cards/dtk">Dragon of Tarkir</a></h2>
+  <% @cards.each do |card| %>
+  <div class="card-li">
+    <a class="card-link" href="/magic_set/<%= card.magic_set.name %>/cards/<%=card.name.gsub(" ","_")%>"><%= card.name %></a>
+  </div>
+  <% end %>
 </div>

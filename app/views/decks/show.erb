@@ -3,5 +3,8 @@
 
 <% @deck.entries.each do |entry| %>
 
-  <h2><%= entry.quantity%> - <a href="/cards/<%=entry.card_name.gsub(" ", "_")%>"><%= entry.card_name%></a> </h2>
+  <h2><%= entry.quantity%> - <a href="/cards/<%=entry.card.name.gsub(" ", "_")%>"><%= entry.card.name%></a> </h2>
 <% end %>
+<div class="input_field">
+  <input type="text" name="card_name" placeholder="Enter Card"><input type="text" name="quantity" placeholder="Enter Quantity"><input class="add-card" type="submit" value="add card">
+</div>

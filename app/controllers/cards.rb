@@ -3,10 +3,10 @@ get '/cards' do
   erb :'/cards/index'
 end
 
-post '/cards/dtk' do
-  Card.create(params[:entry])
-  redirect '/cards/dtk'
-end
+# post '/cards/dtk' do
+#   Card.create(params[:entry])
+#   redirect '/cards/dtk'
+# end
 
 # get '/cards/:id' do
 #   @card = Card.find(params[:id])
@@ -14,7 +14,7 @@ end
 # end
 
 #show
-get '/magic_set/:name/cards/:id' do
+get '/cards/:id' do
   p params
   @card = Card.find_by(name: (params[:id].gsub("_"," ")))
   p @card

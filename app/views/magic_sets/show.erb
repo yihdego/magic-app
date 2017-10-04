@@ -1,6 +1,6 @@
 <h1><%=@magic_set.name%></h1>
   <% @magic_set.cards.each do |card| %>
   <div class="card-li">
-    <a class="card-link" href="/magic_set/<%= card.magic_set.name %>/cards/<%=card.name.gsub(" ","_")%>"><%= card.name %></a>
+    <a class="card-link" href="/cards/<%=card.name.gsub(" ","_")%>"><%= card.name %></a>
   </div>
   <% end %>
