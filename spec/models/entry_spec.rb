@@ -3,7 +3,7 @@ require_relative '../spec_helper'
 describe Entry do
   let(:card) { Card.create(name: "Nicol Bolas") }
   let!(:deck) { Deck.create(name: "Grixis Control")}
-  let(:entry) { Entry.create(card_name: card.name, quantity: 2, deck_id: deck.id)}
+  let(:entry) { Entry.create(card: card, quantity: 2, deck: deck) }
   describe 'attributes' do
     it 'has a card name' do
       expect(entry.card_name).to eq "Nicol Bolas"
