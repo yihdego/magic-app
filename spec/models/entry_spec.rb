@@ -1,14 +1,19 @@
 require_relative '../spec_helper'
 
 describe Entry do
-  let(:card) { Card.create(name: "Anafenza, Kin-Tree Spirit") }
-  let(:entry) { Entry.create(card_name: "Anafenza, Kin-Tree Spirit", quantity: 2)}
+  let(:card) { Card.create(name: "Nicol Bolas") }
+  let!(:deck) { Deck.create(name: "Grixis Control")}
+  let(:entry) { Entry.create(card_name: card.name, quantity: 2, deck_id: deck.id)}
   describe 'attributes' do
     it 'has a card name' do
-      expect(entry.card_name).to eq "Anafenza, Kin-Tree Spirit"
+      expect(entry.card_name).to eq "Nicol Bolas"
     end
     it 'has a quantity' do
       expect(entry.quantity).to eq 2
+    end
+
+    it 'has an association to a deck' do
+      expect(entry.deck).to eq(deck)
     end
   end
 end

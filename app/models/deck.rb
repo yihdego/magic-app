@@ -3,11 +3,11 @@ class Deck < ActiveRecord::Base
   has_many :entries
 
   def decklist
-    @decklist || @decklist = Array.new
+    @decklist
   end
 
   def add_decklist(card, quantity = 1)
-    entry = Entry.create(card_name: card.name, quantity: quantity)
+    entry = Entry.create(card_name: card, quantity: quantity, deck: self)
     if !@decklist
       @decklist = Array.new
       @decklist << entry

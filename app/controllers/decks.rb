@@ -3,9 +3,11 @@ get '/decks/new' do
 end
 
 post '/decks' do
-  @deck = Deck.new(params[:deck])
-  if @deck.save
-    redirect '/decks/:id'
+  p params
+  @deck = Deck.create(name: params[:name], user_id: session[:user_id])
+  @deck.add_decklist(params[:card_name], params[:quantity])
+  if @deck
+    redirect "/decks/#{@deck.id}"
   else
     @error = "Dont forget a name"
     erb :'/decks/new'
@@ -13,7 +15,7 @@ post '/decks' do
 end
 
 get '/decks/:id' do
-  erb :'/deck/show'
+  erb :'/decks/show'
 end
 
 get '/users/:user_name/decks/:id' do

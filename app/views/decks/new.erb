@@ -1,22 +1,29 @@
-<div class="user_input">
-  <form class="new-deck" action="/decks" method="post">
-    <div class="input_label">
-      <label for="deck_name">Deck Name:</label>
-    </div>
-    <div class="input_field">
-      <input type="text" name="name">
-    </div>
-    <div class="input_field">
-      <input type="text" name="entry[name]" placeholder="Enter Card"><input type="text" name="entry[quantity]" placeholder="Enter Quantity"><input class="add-card" type="submit" value="add card">
-    </div>
-    <div class="input_field">
-      <input type="submit">
-    </div>
-  </form>
-</div>
+<% if session[:user_id] %>
+  <div class="user_input">
+    <form class="new-deck" action="/decks" method="post">
+      <div class="input_label">
+        <label for="deck_name">Deck Name:</label>
+      </div>
+      <div class="input_field">
+        <input type="text" name="name">
+      </div>
+      <div class="input_field">
+        <input type="text" name="card_name" placeholder="Enter Card"><input type="text" name="quantity" placeholder="Enter Quantity"><input class="add-card" type="submit" value="add card">
+      </div>
+      <div class="input_field">
+        <input type="submit">
+      </div>
+    </form>
+  </div>
 
-<div class="error">
-  <% if @error %>
-    <p> <%= @error %></p>
-  <% end %>
-</div>
+  <div class="error">
+    <% if @error %>
+      <p> <%= @error %></p>
+    <% end %>
+  </div>
+
+<% else %>
+  <div class="not-logged-in">
+    <h2>Login to use this feature</h2>
+  </div>
+<% end %>
