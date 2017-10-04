@@ -6,7 +6,7 @@ describe Entry do
   let(:entry) { Entry.create(card: card, quantity: 2, deck: deck) }
   describe 'attributes' do
     it 'has a card name' do
-      expect(entry.card_name).to eq "Nicol Bolas"
+      expect(entry.card.name).to eq "Nicol Bolas"
     end
     it 'has a quantity' do
       expect(entry.quantity).to eq 2
