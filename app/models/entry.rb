@@ -1,12 +1,5 @@
-class Entry
-  attr_accessor :quantity
-
-  def initialize(card, amount=1)
-    @card = card
-    @quantity = amount
-  end
-
-  def card
-    @card.name
-  end
+class Entry < ActiveRecord::Base
+  belongs_to :deck
+  validates :card_name, presence: true, uniqueness: { scope: :deck }
+  validates :quantity, presence: true
 end
