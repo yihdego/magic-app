@@ -1,6 +1,9 @@
 get '/cards' do
-  @cards = Card.all
-  erb :'/cards/index'
+  if params[:card_name]
+    p params
+    @cards = Card.where(name: params[:card_name])
+  end
+    erb :'/cards/index'
 end
 
 # post '/cards/dtk' do
@@ -19,15 +22,15 @@ get '/cards/:id' do
   if params[:card_name]
     if params[:card_name].length > 1
       card_name = params[:card_name].gsub("_"," ")
-      @card = Card.find_by(name: card_name)
+      card = Card.find_by(name: card_name)
     else
       redirect '/cards'
     end
   else
-    @card = Card.find_by(name: (params[:id].gsub("_"," ")))
+    card = Card.find_by(name: (params[:id].gsub("_"," ")))
   end
   if request.xhr?
-    erb :'/cards/_card-details', layout: false
+    erb :'/cards/_card-details', locals: { card: card }, layout: false
   else
     erb :'/cards/show'
   end

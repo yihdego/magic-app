@@ -1,5 +1,6 @@
 <% if @card %>
-  <%= erb :'cards/_card-details', locals: { card: @card } %>
+  <% card = @card %>
+  <%= erb :'cards/_card-details', locals: { card: card } %>
 <% else %>
 
 <% end %>

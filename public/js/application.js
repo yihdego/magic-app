@@ -10,15 +10,20 @@ $(document).ready(function () {
       $clicked.closest('div').append(response)
     })
   })
-
-  // $('.card-search').on('submit', 'button' function (event){
+  // 
+  // $('.search-button').on("click", function (event){
   //   event.preventDefault();
-  // //   const $clicked = $(event.currentTarget)
-  // //   const url = $clicked.attr("href");
-  // //   $.ajax({
-  // //     url
-  // //   }).done((response) => {
-  // //     $clicked.closest('div').append(response)
-  // //   })
-  // // })
+  //   const $clicked = $(event.currentTarget)
+  //   const url = $clicked.closest('form').attr("action");
+  //   const data = $('.input-field').find('input[name]').val();
+  //
+  //   $.ajax({
+  //     url,
+  //     data
+  //   }).done((response) => {
+  //     $(".card-show").remove()
+  //     $clicked.closest('div').append(response)
+  //
+  //   })
+  // })
 });

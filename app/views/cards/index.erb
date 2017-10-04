@@ -1,13 +1,17 @@
 <div class="container">
-  <form class="card-search" action="/cards/:id" method="get">
+  <form class="card-search" action="/cards" method="get">
     <div class="input_label">
       <label for="deck_name">Search for a card:</label>
     </div>
     <div class="input-field">
       <input type="text" name="card_name" placeholder="Enter Card">
-    </div>
-    <div class="input-field">
-      <input type="submit">
+      <input class="search-button" type="submit">
     </div>
   </form>
 </div>
+
+<% if @cards %>
+  <% @cards.each do |card| %>
+      <%= erb :'cards/_card-details', locals: { card: card } %>
+  <% end %>
+<% end %>
