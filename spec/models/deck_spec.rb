@@ -21,7 +21,7 @@ describe Deck do
     it 'can return the quanityt of a card' do
       deck.add_decklist(bolt, 4)
       deck.add_decklist(counterspell, 3)
-      expect(deck.decklist.last).to eq({counterspell=>3})
+      expect(deck.decklist.last.quantity).to eq(3)
     end
   end
 end
