@@ -23,3 +23,12 @@ get '/users/:user_name/decks/:id' do
   @deck = Deck.find(params[:id])
   erb :'/decks/show'
 end
+
+put '/decks/:id' do
+  p '*' * 100
+  p params
+  card = Card.find_by(name: params[:card_name])
+  @deck = Deck.find(params[:id])
+  @deck.add_decklist(card, params[:quantity])
+  erb :'/decks/show'
+end
