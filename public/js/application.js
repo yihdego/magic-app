@@ -21,7 +21,6 @@ $(document).ready(function () {
       url,
       data
     })
-    debugger
     jax.done((response) => {
       $(".card-show").remove()
       $clicked.closest('div').append(response)

@@ -1,4 +1,18 @@
-<% if cards %>
+<% if @card %>
+<div class="card-show">
+  <h1 class="set-name"><a href='/magic_sets/<%=@card.magic_set.name%>'><%=@card.magic_set.name%></a></h1>
+  <h2 class="card-name"> <%= @card.name %></h2>
+  <ul class="card-details">
+    <li> Mana Cost: <%= @card.mana_cost %></li>
+    <li> Rarity: <%= @card.rarity %> </li>
+    <li> Card Type: <%= @card.cardtype %> </li>
+    <li> Description: <%= @card.text.gsub('\n', " ") %> </li>
+    <% if @card.power %>
+      <li>Power: <%= @card.power %> Toughness: <%= @card.toughness %> </li>
+    <% end %>
+  </ul>
+</div>
+<% elsif cards %>
 <% cards.each do |card| %>
   <div class="card-show">
     <h1 class="set-name"><a href='/magic_sets/<%=card.magic_set.name%>'><%=card.magic_set.name%></a></h1>
@@ -15,5 +29,17 @@
   </div>
   <% end %>
 <% else %>
-hello world
+  <div class="card-show">
+    <h1 class="set-name"><a href='/magic_sets/<%=card.magic_set.name%>'><%=card.magic_set.name%></a></h1>
+    <h2 class="card-name"> <%= card.name %></h2>
+    <ul class="card-details">
+      <li> Mana Cost: <%= card.mana_cost %></li>
+      <li> Rarity: <%= card.rarity %> </li>
+      <li> Card Type: <%= card.cardtype %> </li>
+      <li> Description: <%= card.text.gsub('\n', " ") %> </li>
+      <% if card.power %>
+        <li>Power: <%= card.power %> Toughness: <%= card.toughness %> </li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
