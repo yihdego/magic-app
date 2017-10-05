@@ -35,7 +35,6 @@ put '/decks/:id' do
 end
 
 delete '/decks/:id' do
-  p params
   @deck = Deck.find(params[:id])
   @deck.destroy
   redirect "/users/#{session[:user_id]}"

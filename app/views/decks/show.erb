@@ -3,7 +3,7 @@
 
 <ul class=deck-details>
   <% @deck.entries.each do |entry| %>
-    <li><%= entry.quantity%> - <a href="/cards/<%=entry.card.name.gsub(" ", "_")%>"><%= entry.card.name%></a> </li>
+    <li><%= entry.quantity%> - <a href="/cards/<%=entry.card.name.gsub(" ", "_")%>"><%= entry.card.name%></a><%= erb :'/decks/_delete-entry', layout: false, locals: { entry: entry } %></li>
   <% end %>
 </ul>
 
