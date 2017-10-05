@@ -11,7 +11,7 @@
   <form method="post" action="/decks/<%=@deck.id%>">
     <input type="hidden" name="_method" value="put">
     <div class="input_field">
-      <input type="text" name="card_name" placeholder="Enter Card"><input type="text" name="quantity" placeholder="Enter Quantity"><input class="add-card" type="submit" value="add card">
+      <input type="text" name="card_name" placeholder="Enter Card"><input type="number" name="quantity" placeholder="Enter Quantity"><input class="add-card" type="submit" value="add card">
     </div>
   </form>
 <% end %>

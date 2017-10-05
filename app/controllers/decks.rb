@@ -25,7 +25,7 @@ get '/users/:user_name/decks/:id' do
 end
 
 put '/decks/:id' do
-  card = Card.where(name: params[:card_name])
+  card = Card.find_by(name: params[:card_name])
   @deck = Deck.find(params[:id])
   @deck.add_decklist(card, params[:quantity])
   if card == nil
