@@ -1,5 +1,10 @@
 
+body {
+  background-image: url("/whirlpool/whirlpool.png")
+}
+
 .header {
+  border: dotted purple;
   top: 0;
   left: 0;
   height: 90px;
@@ -7,25 +12,22 @@
   background-image: url("/ep_naturalblack/ep_naturalblack.png");
 }
 
-.header a:visited {
+a:visited {
   color: orange;
 }
 
-body {
-  margin: auto;
-  background-image: url("/whirlpool/whirlpool.png")
-
-  /*background-image: url("/css/dark-triangles/dark-triangles.png");*/
+.search-card-index {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -180px;
+  border: dotted red;
+  background-image: url("/dark-triangles/dark-triangles.png");
+  padding: 20px;
+  color: white;
 }
 
-.index {
-  width: 650px;
-  margin: 20px auto;
-  padding: 8px;
-}
-
-.lists {
-  width: 650px;
-  margin: 20px auto;
-  padding: 8px;
+.input_label {
+  padding-bottom: 10px
 }

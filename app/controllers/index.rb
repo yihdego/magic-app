@@ -1,3 +1,5 @@
 get '/' do
-  redirect '/magic_sets'
+  @card = Card.all.sample
+  @deck = Deck.all.sample
+  erb :index
 end

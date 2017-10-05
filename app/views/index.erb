@@ -1,0 +1,13 @@
+<h1 class="welcome message">Welcome to Deck Box</h1>
+<div class="summary-page">
+  <p>A Magic the Gathering site where you can search cards and decklists</p>
+  <p>As a user you are able to make your own decklists</p>
+</div>
+<div class="cards-index">
+  <a href="/magic_sets">Magic cards ordered by set</a>
+  <h2>Random Card</h2>
+  <%= erb :'cards/_card-details', locals: { card: @card } %>
+</div>
+<div class="decklist-index">
+  <a href="/decks">Decklists</a>
+</div>
