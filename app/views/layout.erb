@@ -18,6 +18,9 @@
   </div>
   <div class="User-controller">
     <% if session[:user_id] %>
+      <div class="Profile">
+        <a href="/users/<%=session[:user_id]%>">Profile</a>
+      </div>
       <a href="/decks/new">Make a new Deck</a>
       <%= erb :"/sessions/_logout" %>
     <% else %>

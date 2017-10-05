@@ -3,7 +3,7 @@
     <ul>
       <li>User: <%=@user.name %></li>
       <%@user.decks.each do |deck|%>
-      <li><a href="/users/deck.user.name/decks/deck.id">deck.name</a></li>
+      <li><a href="/decks/<%=deck.id%>"> <%= deck.name %> </a></li>
       <% end %>
     </ul>
   </div>
