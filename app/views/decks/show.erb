@@ -14,6 +14,9 @@
       <input type="text" name="card_name" placeholder="Enter Card"><input type="number" name="quantity" placeholder="Enter Quantity"><input class="add-card" type="submit" value="add card">
     </div>
   </form>
+  <div class="delete-deck">
+    <%= erb :'/decks/_delete-deck', layout: false, locals: { deck: @deck } %>
+  </div>
 <% end %>
 
 <div class="error">

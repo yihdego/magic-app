@@ -33,3 +33,10 @@ put '/decks/:id' do
   end
   erb :'/decks/show'
 end
+
+delete '/decks/:id' do
+  p params
+  @deck = Deck.find(params[:id])
+  @deck.destroy
+  redirect "/users/#{session[:user_id]}"
+end
