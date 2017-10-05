@@ -3,7 +3,6 @@ get '/decks/new' do
 end
 
 post '/decks' do
-  p params
   card = Card.find_by(name: params[:card_name])
   @deck = Deck.create(name: params[:name], user_id: session[:user_id])
   @deck.add_decklist(card, params[:quantity])
@@ -36,6 +35,7 @@ end
 
 delete '/decks/:id' do
   @deck = Deck.find(params[:id])
+  @deck.entries.destroy_all
   @deck.destroy
   redirect "/users/#{session[:user_id]}"
 end
