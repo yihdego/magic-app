@@ -25,10 +25,11 @@ get '/users/:user_name/decks/:id' do
 end
 
 put '/decks/:id' do
-  p '*' * 100
-  p params
-  card = Card.find_by(name: params[:card_name])
+  card = Card.where(name: params[:card_name])
   @deck = Deck.find(params[:id])
   @deck.add_decklist(card, params[:quantity])
+  if card == nil
+    @error = "Card not in database"
+  end
   erb :'/decks/show'
 end
