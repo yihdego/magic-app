@@ -3,22 +3,24 @@
 
 <ul class=deck-details>
   <% @deck.entries.each do |entry| %>
-    <li><%= entry.quantity%> - <a href="/cards/<%=entry.card.name.gsub(" ", "_")%>"><%= entry.card.name%></a><%= erb :'/decks/_delete-entry', layout: false, locals: { entry: entry } %></li>
+    <%= erb :'/decks/_entry-show', layout: false, locals: { entry: entry } %>
   <% end %>
 </ul>
 
+<div class="add-entry">
 <% if session[:user_id] == @deck.user.id %>
-  <form method="post" action="/decks/<%=@deck.id%>">
-    <input type="hidden" name="_method" value="put">
-    <div class="input_field">
-      <input type="number" name="quantity" placeholder="Enter Quantity"><input type="text" name="card_name" placeholder="Enter Card"><input class="add-card" type="submit" value="add card">
-    </div>
-  </form>
+
+    <form method="post" action="/decks/<%=@deck.id%>">
+      <input type="hidden" name="_method" value="put">
+      <div class="input-field">
+        <input class ="quantity-field"type="number" name="quantity" placeholder="Enter Quantity"><input class="card_name-field" type="text" name="card_name" placeholder="Enter Card"><input class="add-card" type="submit" value="add card">
+      </div>
+    </form>
   <div class="delete-deck">
     <%= erb :'/decks/_delete-deck', layout: false, locals: { deck: @deck } %>
   </div>
 <% end %>
-
+</div>
 <div class="error">
   <% if @error %>
     <p> <%= @error %></p>

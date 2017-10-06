@@ -26,11 +26,33 @@ end
 put '/decks/:id' do
   card = Card.find_by(name: params[:card_name])
   @deck = Deck.find(params[:id])
-  @deck.add_decklist(card, params[:quantity])
+  entry = @deck.add_decklist(card, params[:quantity])
+  entry_error = entry.errors.full_messages
+  p card
+  p '*' * 100
   if card == nil
     @error = "Card not in database"
   end
-  erb :'/decks/show'
+  if request.xhr?
+    if !card
+      content_type 'application/JSON'
+      status 400
+      errors = ["Card not found"]
+      {errors: errors}.to_json
+
+    elsif entry_error.length == 1
+      content_type 'application/JSON'
+      status 400
+      {errors: entry_error}.to_json
+    else
+      content_type "application/JSON"
+      entry = @deck.entries.last
+      entry.to_json
+      erb :'/decks/_entry-show', layout: false, locals: { entry: entry }
+    end
+  else
+    erb :'/decks/show'
+  end
 end
 
 delete '/decks/:id' do

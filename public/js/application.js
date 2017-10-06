@@ -26,4 +26,30 @@ $(document).ready(function () {
       $clicked.closest('div').append(response)
     })
   })
+
+  $('div.add-entry').on("submit", "form", (event) => {
+    event.preventDefault();
+    const $submit = $(event.currentTarget)
+    const url = $submit.attr("action");
+    const cardQuantity = $('.quantity-field').val();
+    const cardName = $('.card_name-field').val();
+    const data = {quantity: cardQuantity, card_name: cardName};
+    const jax = $.ajax({
+      url,
+      data,
+      method: 'PUT'
+    })
+    jax.done((response) => {
+      console.log(response)
+      $("ul").last("li").append(response);
+    })
+    .fail((response) => {
+      // const errors = response.responseJSON.errors;
+      console.log(response)
+      const errors = JSON.parse(response.responseText);
+      const array = Object.values(errors);
+      const error = array[0][0]
+      $submit.next().html(error)
+    })
+  })
 });
