@@ -24,16 +24,3 @@
 1 Temple of Enlightenment
 1 Temple of Malady
 1 Urborg, Tomb of Yawgmoth
-
-
-1 Ashiok, Nightmare Weaver
-2 Drown in Sorrow
-1 Ætherspouts
-1 Pearl Lake Ancient
-1 Tasigur, the Golden Fang
-1 Cranial Archive
-2 Disdainful Stroke
-1 Interpret the Signs
-2 Negate
-1 Pharika's Cure
-2 Thoughtseize

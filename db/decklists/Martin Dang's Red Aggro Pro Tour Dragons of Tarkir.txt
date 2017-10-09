@@ -16,12 +16,3 @@
 10 Mountain
 1 Temple of Abandon
 4 Wooded Foothills
-
-
-2 Goblin Rabblemaster
-4 Eidolon of the Great Revel
-1 Goblin Heelcutter
-1 Destructive Revelry
-2 Hall of Triumph
-4 Roast
-1 Scouring Sands

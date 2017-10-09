@@ -24,7 +24,7 @@ Dir.glob('db/decklists/*.txt') do |decklists|
       card = Card.find_by(name: quantity_n_card_name[1])
       deck.add_decklist(card, quantity_n_card_name[0])
     else
-      card = line[1..-1]
+      card = line[2..-3]
       card = Card.find_by(name: card)
       deck.add_decklist(card, quantity_n_card_name[0])
     end

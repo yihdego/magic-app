@@ -20,13 +20,3 @@
 4 Temple of Silence
 1 Urborg, Tomb of Yawgmoth
 4 Windswept Heath
-
-
-1 Bile Blight
-1 End Hostilities
-2 Nissa, Worldwaker
-3 Fleecemane Lion
-3 Drown in Sorrow
-2 Duress
-1 Erase
-2 Read the Bones
