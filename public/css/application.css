@@ -135,14 +135,13 @@ a:visited {
 }*/
 
 .search-card-index {
-  position: fixed;
+  position: relative;
   top: 20%;
-  left: 50%;
+  left: 10%;
   margin-top: -50px;
   margin-left: -180px;
-  border: dotted red;
-  background-image: url("/dark-triangles/dark-triangles.png");
-  padding: 20px;
+  background-image: url("/ep_naturalblack/ep_naturalblack.png");
+  padding: 40px;
   color: white;
 }
 

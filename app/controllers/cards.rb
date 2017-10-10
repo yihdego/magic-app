@@ -1,6 +1,6 @@
 get '/cards' do
   if params[:card_name]
-    @cards = Card.where(name: params[:card_name])
+    @cards = Card.where("name LIKE ?", "%#{params[:card_name]}%")
   end
   if request.xhr?
     erb :'/cards/_card-details', locals: { cards: @cards }, layout: false
@@ -8,16 +8,6 @@ get '/cards' do
     erb :'/cards/index'
   end
 end
-
-# post '/cards/dtk' do
-#   Card.create(params[:entry])
-#   redirect '/cards/dtk'
-# end
-
-# get '/cards/:id' do
-#   @card = Card.find(params[:id])
-#   erb :'/cards/show'
-# end
 
 #show
 get '/cards/:id' do
