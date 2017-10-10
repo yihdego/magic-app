@@ -1,4 +1,9 @@
 <div class="profile-page">
+  <% if session[:user_id] == @user.id %>
+  <div class="logout">
+    <%= erb :"/sessions/_logout" %>
+  </div>
+  <% end %>
   <div class="user-info">
     <ul>
       <li>User: <%=@user.name %></li>

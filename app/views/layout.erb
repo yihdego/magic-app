@@ -20,7 +20,6 @@
           <% if session[:user_id] %>
             <li><a href="/users/<%=session[:user_id]%>">Profile</a></li>
             <li><a href="/decks/new">Make a new Deck</a></li>
-            <%= erb :"/sessions/_logout" %>
           <% else %>
             <li>
               <a href="/users/new">Sign Up</a>
