@@ -3,6 +3,7 @@
   <h1 class="set-name"><a href='/magic_sets/<%=@card.magic_set.name%>'><%=@card.magic_set.name%></a></h1>
   <h2 class="card-name"> <%= @card.name %></h2>
   <ul class="card-details">
+    <img src= <%= @card.image %> alt= <%= @card.name %> >
     <li> Mana Cost: <%= @card.mana_cost %></li>
     <li> Rarity: <%= @card.rarity %> </li>
     <li> Card Type: <%= @card.cardtype %> </li>
@@ -18,6 +19,8 @@
     <h1 class="set-name"><a href='/magic_sets/<%=card.magic_set.name%>'><%=card.magic_set.name%></a></h1>
     <h2 class="card-name"> <%= card.name %></h2>
     <ul class="card-details">
+      <img src= <%= card.image %> alt= <%= card.name %> >
+      <li> <%= card.image %> </li>
       <li> Mana Cost: <%= card.mana_cost %></li>
       <li> Rarity: <%= card.rarity %> </li>
       <li> Card Type: <%= card.cardtype %> </li>
@@ -33,6 +36,7 @@
     <h1 class="set-name"><a href='/magic_sets/<%=card.magic_set.name%>'><%=card.magic_set.name%></a></h1>
     <h2 class="card-name"> <%= card.name %></h2>
     <ul class="card-details">
+      <img src= <%= card.image %> alt= <%= card.name %> >
       <li> Mana Cost: <%= card.mana_cost %></li>
       <li> Rarity: <%= card.rarity %> </li>
       <li> Card Type: <%= card.cardtype %> </li>
