@@ -14,28 +14,34 @@
 .cards-index {
   float: left;
   width: 47%;
-  border: dotted red;
+  /*border: dotted red;*/
   margin-top: 20px;
 }
 
 .summary-page {
-  border: dotted green;
+  /*border: dotted green;*/
   width: 1000px;
+  margin-top: 4%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 4%;
   overflow: hidden;
+  background-image: url("/ep_naturalblack/ep_naturalblack.png");
+  color: #fff;
+  padding: 2%;
+  box-shadow: 6px 6px 3px grey;
   /*margin-bottom: 5px;*/
 }
 
 /* nav styles */
-.decklist-index a:link,
-.decklist-index a:visited {
-  color: #000;
+.summary-page a:link,
+.summary-page a:visited {
+  color: white;
 }
 
-.decklist-index a:hover,
-.decklist-index a:focus {
-  color: aquamarine;
+.summary-page a:hover,
+.summary-page a:focus {
+  color: purple;
   transition: .5s;
 }
 
@@ -47,7 +53,7 @@
 .decklist-index {
   width: 47%;
   float: right;
-  border: dotted purple;
+  /*border: dotted purple;*/
   margin-top: 20px;
 }
 
@@ -62,7 +68,7 @@ body {
 
 .main {
   padding-top: 125px;
-  border: dotted yellow;
+  /*border: dotted yellow;*/
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -176,14 +182,14 @@ a:visited {
 }*/
 
 .search-card-index {
-  position: relative;
-  top: 20%;
-  left: 10%;
-  margin-top: -50px;
-  margin-left: -180px;
   background-image: url("/ep_naturalblack/ep_naturalblack.png");
-  padding: 40px;
   color: white;
+  text-align: center;
+  width: 350px;
+  padding: 1%;
+  margin-top: 4%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .input_label {
