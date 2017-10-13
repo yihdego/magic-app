@@ -8,7 +8,13 @@ class Card < ActiveRecord::Base
   end
 
   def image
-    "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=#{self.multiverseid}&type=card"
+    if self.multiverseid
+      "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=#{self.multiverseid}&type=card"
+    else
+      alternative_cards = Card.where(name: self.name)
+      first_printing = alternative_cards.last
+      "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=#{first_printing.multiverseid}&type=card"
+    end
   end
 
   def mana_symbol(field)

@@ -19,7 +19,15 @@
 
 .summary-page {
   border: dotted green;
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  /*margin-bottom: 5px;*/
 }
+
+/*.summary-page p {
+  text-align: center
+}*/
 
 .decklist-index {
   float: right;
