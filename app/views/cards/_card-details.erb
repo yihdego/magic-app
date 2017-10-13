@@ -7,7 +7,9 @@
     <li> Mana Cost: <%= @card.mana_cost %></li>
     <li> Rarity: <%= @card.rarity %> </li>
     <li> Card Type: <%= @card.cardtype %> </li>
-    <li> Description: <%= @card.text.gsub('\n', " ") %> </li>
+    <% if @card.text %>
+      <li> Description: <%= @card.text.gsub('\n', " ") %> </li>
+    <% end %>
     <% if @card.power %>
       <li>Power: <%= @card.power %> Toughness: <%= @card.toughness %> </li>
     <% end %>
@@ -20,11 +22,12 @@
     <h2 class="card-name"> <%= card.name %></h2>
     <ul class="card-details">
       <img src= <%= card.image %> alt= <%= card.name %> >
-      <li> <%= card.image %> </li>
-      <li> Mana Cost: <%= card.mana_cost %></li>
+      <li> Mana Cost: <%= card.mana_symbol(card.mana_cost) %></li>
       <li> Rarity: <%= card.rarity %> </li>
       <li> Card Type: <%= card.cardtype %> </li>
-      <li> Description: <%= card.text.gsub('\n', " ") %> </li>
+      <% if card.text %>
+        <li> Description: <%= card.text.gsub('\n', " ") %> </li>
+      <% end %>
       <% if card.power %>
         <li>Power: <%= card.power %> Toughness: <%= card.toughness %> </li>
       <% end %>
@@ -40,7 +43,9 @@
       <li> Mana Cost: <%= card.mana_cost %></li>
       <li> Rarity: <%= card.rarity %> </li>
       <li> Card Type: <%= card.cardtype %> </li>
-      <li> Description: <%= card.text.gsub('\n', " ") %> </li>
+      <% if card.text %>
+        <li> Description: <%= card.text.gsub('\n', " ") %> </li>
+      <% end %>
       <% if card.power %>
         <li>Power: <%= card.power %> Toughness: <%= card.toughness %> </li>
       <% end %>
