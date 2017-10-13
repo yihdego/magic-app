@@ -1,11 +1,7 @@
 <% @deck = Deck.find(params[:id]) %>
 <h3 class="deck-name"><%=@deck.name%></h3>
 
-<ul class=deck-details>
-  <% @deck.entries.each do |entry| %>
-    <%= erb :'/decks/_entry-show', layout: false, locals: { entry: entry } %>
-  <% end %>
-</ul>
+<%= erb :'/decks/_list-show', layout: false, locals: { deck: @deck } %>
 
 <div class="add-entry">
 <% if session[:user_id] == @deck.user.id %>

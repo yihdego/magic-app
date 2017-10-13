@@ -11,19 +11,35 @@
   color: #000;
 }
 
+.cards-index {
+  float: left;
+  border: dotted red;
+  width: 400px;
+}
+
+.summary-page {
+  border: dotted green;
+}
+
+.decklist-index {
+  float: right;
+  border: dotted purple;
+}
+
 body {
   margin: 0;
   padding-top: 0px;
-  height: 2000px;
+  height: auto;
   font-size: 16px;
   line-height: 1.5;
   background-image: url("/whirlpool/whirlpool.png")
 }
 
 .main {
-  padding-top: 10%;
+  padding-top: 125px;
+  border: dotted yellow;
   padding-left: 5%;
-  padding-right: 5px;
+  padding-right: 5%;
 }
 
 ul, li, h1, h2, h3, h4, h5, h6, p, a, .logo {

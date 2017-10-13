@@ -1,0 +1,7 @@
+<ul class=deck-details>
+  <% random_card = deck.entries.sample %>
+  <img src= <%= random_card.card.image %> alt="<%= random_card.card.name %>"> 
+  <% deck.entries.each do |entry| %>
+    <%= erb :'/decks/_entry-show', layout: false, locals: { entry: entry } %>
+  <% end %>
+</ul>

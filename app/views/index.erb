@@ -11,4 +11,6 @@
 <div class="decklist-index">
   <h2>Random Deck</h2>
   <a href="/decks/<%=@deck.id%>"><%= @deck.name%></a>
+  <%= erb :'/decks/_list-show', layout: false, locals: { deck: @deck } %>
+
 </div>
