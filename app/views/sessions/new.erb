@@ -1,21 +1,11 @@
-<div class="user_input">
-  <form class="returning-user" action="/sessions" method="post">
-    <div class="input_label">
-      <label for="email">Email:</label>
-    </div>
-    <div class="input_field">
-      <input type="email" name="email">
-    </div>
-    <div class="input_label">
-      <label for="password">Password:</label>
-    </div>
-    <div class="input_field">
-      <input type="password" name="password">
-    </div>
-    <div class="input_field">
-      <input type="submit">
-    </div>
-  </form>
+<div class="login-page">
+  <div class="form">
+    <form class="returning-user" action="/sessions" method="post">
+      <input type="email" name="email" placeholder="email">
+      <input type="password" name="password" placeholder="password">
+      <button>Login In</button>
+    </form>
+  </div>
 </div>
 
 <div class="error">

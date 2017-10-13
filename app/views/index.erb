@@ -9,5 +9,6 @@
   <%= erb :'cards/_card-details', locals: { card: @card } %>
 </div>
 <div class="decklist-index">
-  <a href="/decks">Decklists</a>
+  <h2>Random Deck</h2>
+  <a href="/decks/<%=@deck.id%>"><%= @deck.name%></a>
 </div>

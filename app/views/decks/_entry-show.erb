@@ -1,1 +1,4 @@
-<li><%= entry.quantity%> - <a href="/cards/<%=entry.card.name.gsub(" ", "_")%>"><%= entry.card.name%></a><%= erb :'/decks/_delete-entry', layout: false, locals: { entry: entry } %></li>
+<li><%= entry.quantity%> - <a href="/cards/<%=entry.card.name.gsub(" ", "_")%>"><%= entry.card.name%></a>
+<% if entry.deck.id == session[:id] %>
+  <%= erb :'/decks/_delete-entry', layout: false, locals: { entry: entry } %></li>
+<% end %>
