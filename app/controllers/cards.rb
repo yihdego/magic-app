@@ -1,5 +1,6 @@
 get '/cards' do
   if params[:card_name]
+    p '*' * 50
     @cards = Card.where("name LIKE ?", "%#{params[:card_name]}%")
   end
   if request.xhr?
