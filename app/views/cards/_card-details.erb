@@ -4,7 +4,7 @@
   <h2 class="card-name"> <%= @card.name %></h2>
   <ul class="card-details">
     <img src= <%= @card.image %> alt= <%= @card.name %> >
-    <li> Mana Cost: <%= @card.mana_cost %></li>
+    <li> Mana Cost: <%= @card.mana_symbol(@card.mana_cost) %></li>
     <li> Rarity: <%= @card.rarity %> </li>
     <li> Card Type: <%= @card.cardtype %> </li>
     <% if @card.text %>
@@ -40,7 +40,7 @@
     <h2 class="card-name"> <%= card.name %></h2>
     <ul class="card-details">
       <img src= <%= card.image %> alt= <%= card.name %> >
-      <li> Mana Cost: <%= card.mana_cost %></li>
+      <li> Mana Cost: <%= card.mana_symbol(card.mana_cost) %></li>
       <li> Rarity: <%= card.rarity %> </li>
       <li> Card Type: <%= card.cardtype %> </li>
       <% if card.text %>

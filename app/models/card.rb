@@ -12,8 +12,13 @@ class Card < ActiveRecord::Base
   end
 
   def mana_symbol(field)
-    if field.include?("{W}")
-    return  "<img src='/images/W.svg' alt='{W}'>"
+    symbolsarray = field.split('}')
+    mana = ""
+    symbolsarray.each do |symbol|
+      if symbol.include?("{W")
+        mana += "<img src='/images/W.svg' width='20' alt='{W}'> "
+      end
     end
+    return mana
   end
 end
