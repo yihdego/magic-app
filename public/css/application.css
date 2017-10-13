@@ -13,25 +13,42 @@
 
 .cards-index {
   float: left;
+  width: 47%;
   border: dotted red;
-  width: 400px;
+  margin-top: 20px;
 }
 
 .summary-page {
   border: dotted green;
-  width: 1200px;
+  width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  overflow: hidden;
   /*margin-bottom: 5px;*/
 }
+
+/* nav styles */
+.decklist-index a:link,
+.decklist-index a:visited {
+  color: #000;
+}
+
+.decklist-index a:hover,
+.decklist-index a:focus {
+  color: aquamarine;
+  transition: .5s;
+}
+
 
 /*.summary-page p {
   text-align: center
 }*/
 
 .decklist-index {
+  width: 47%;
   float: right;
   border: dotted purple;
+  margin-top: 20px;
 }
 
 body {
