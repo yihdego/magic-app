@@ -31,3 +31,7 @@ a:visited {
 .input_label {
   padding-bottom: 10px
 }
+
+div.summary-page {
+  border: yellow dotted;
+}
