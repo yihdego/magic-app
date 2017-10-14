@@ -17,6 +17,8 @@ gem 'bcrypt'
 
 gem 'shotgun'
 
+gem 'cowsay'
+
 group :development, :test do
   gem 'faker', '~> 1.7.3'
   gem 'rspec', '~> 3.5'
