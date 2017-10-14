@@ -12,7 +12,9 @@ gem 'thin'
 gem 'activerecord', '~> 5.0'
 gem 'activesupport', '~> 5.0'
 
-gem 'rake', '~> 12.0.0'
+gem 'kramdown'
+
+gem 'rake'
 gem 'bcrypt'
 
 gem 'shotgun'
